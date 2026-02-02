@@ -6,7 +6,6 @@ fun main() {
 
     val discount = calculateDiscount(price)
 
-    // Memanggil fungsi dengan Named Arguments
     printReceipt(
         title = gameTitle,
         originalPrice = price,
@@ -16,7 +15,6 @@ fun main() {
 
 fun calculateDiscount(price: Int): Int = if (price > 500000) (price * 0.2).toInt() else (price * 0.1).toInt()
 
-// Fungsi untuk mencetak struk
 fun printReceipt(title: String, originalPrice: Int, finalPrice: Int) {
     println("--- STEAMKW RECEIPT ---")
     println("Game: $title")
