@@ -1,9 +1,10 @@
-package oop_00000125138_Gilbert.Week02
+package oop_00000125138_Gilbert.week02
 
 class Student (
     val name: String,
     val nim: String,
-    var major: String
+    var major: String,
+    var gpa: Double = 0.0
 ) {
     init {
         if (nim.length != 5) {
@@ -14,8 +15,7 @@ class Student (
         }
     }
 
-    // Secondary Constructor (The Old Way)
-    // Wajib memanggil Primary Constructor menggunakan 'this()'
+    // Secondary Constructor
     constructor(name: String, nim: String) : this(name, nim, "Non-Matriculated") {
         println("LOG: Menggunakan constructor jalur umum (Tanpa Jurusan).")
     }
