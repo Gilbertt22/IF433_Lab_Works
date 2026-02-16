@@ -1,4 +1,4 @@
-package oop_00000125138_Gilbert.Week02
+package oop_00000125138_Gilbert.week02
 
 import java.util.Scanner
 
