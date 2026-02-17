@@ -13,4 +13,15 @@ fun main() {
     println("Pajak yang harus dibayar: ${e.tax}")
 
     e.printStatus()
+
+    println("\n--- Testing Tugas 1: Weapon ---")
+    val w = Weapon("Excalibur")
+
+    w.damage = -50
+    println("Damage saat ini: ${w.damage}")
+
+    w.damage = 9999
+    println("Damage saat ini: ${w.damage}")
+
+    println("Tier Senjata: ${w.tier}")
 }
