@@ -1,7 +1,6 @@
 package oop_00000125138_Gilbert.week03
 
 fun main() {
-    // saya memang tidak menuliskan perintah
     val e = Employee("Budi")
 
     e.salary = -1000

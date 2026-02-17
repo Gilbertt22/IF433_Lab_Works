@@ -1,7 +1,6 @@
 package oop_00000125138_Gilbert.week03
 
 class Employee(val name: String) {
-    // saya memang tidak menuliskan perintah
     var salary: Int = 0
         set(value){
             if (value < 0) {
