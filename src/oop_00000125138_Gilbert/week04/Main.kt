@@ -27,4 +27,10 @@ fun main() {
     val mgr = Manager("Gilbert", 8000, 5)
     mgr.work()
     println("Bonus Manager ${mgr.name}: ${mgr.calculateBonus()}")
+    // Lanjutan
+    println("\n--- Testing Developer ---")
+    val dev = Developer("Gilbert Dev", 7000000, "Kotlin")
+    dev.work()
+
+    println("Bonus Developer ${dev.name}: Rp ${dev.calculateBonus()}")
 }
