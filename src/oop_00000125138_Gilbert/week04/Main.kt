@@ -18,4 +18,13 @@ fun main() {
     myTesla.accelerate()
     myTesla.honk()
     myTesla.openTrunk()
+    // Testing Tugas Mandiri 2
+    println("\n--- Testing Employee & Manager ---")
+    val emp = Employee("Budi", 5000)
+    emp.work()
+    println("Bonus Budi: ${emp.calculateBonus()}")
+
+    val mgr = Manager("Gilbert", 8000, 5)
+    mgr.work()
+    println("Bonus Manager ${mgr.name}: ${mgr.calculateBonus()}")
 }
