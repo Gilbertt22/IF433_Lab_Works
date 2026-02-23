@@ -11,4 +11,11 @@ fun main() {
     myCar.openTrunk()     // Memanggil method milik sendiri
     myCar.honk()          // Memanggil method Parent
     myCar.accelerate()     // Memanggil method Parent
+
+    println("\n--- Testing Electric Car ---")
+    val myTesla = ElectricCar(brand = "Tesla", numberOfDoors = 2, batteryCapacity = 85)
+
+    myTesla.accelerate()
+    myTesla.honk()
+    myTesla.openTrunk()
 }
