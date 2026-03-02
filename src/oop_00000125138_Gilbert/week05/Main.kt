@@ -22,6 +22,7 @@ fun main() {
         }
         println("----------------------------")
     }
+
     val math = MathHelper()
 
     val hasilPersegi = math.hitungLuas(5)
@@ -32,4 +33,27 @@ fun main() {
 
     val hasilLingkaran = math.hitungLuas(7.0)
     println("Hasil hitungLuas(7.0)        [Double] : $hasilLingkaran")
+
+    println("\n=== SIMULASI SISTEM PEMBAYARAN ===")
+
+    val myEWallet = EWallet("Gilbert Wallet", 50000.0)
+    val myCreditCard = CreditCard("Gilbert Visa", 100000.0)
+
+    val daftarPembayaran: List<PaymentMethod> = listOf(myEWallet, myCreditCard)
+
+    for (payment in daftarPembayaran) {
+        payment.processPayment(75000.0)
+
+        when (payment) {
+            is EWallet -> {
+                println("=> Tipe: E-Wallet")
+                payment.topUp(50000.0)
+            }
+            is CreditCard -> {
+                println("=> Tipe: Credit Card")
+                println("=> Limit Tersisa: Rp${payment.creditLimit}")
+            }
+        }
+        println("----------------------------")
+    }
 }
