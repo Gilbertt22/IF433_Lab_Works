@@ -48,6 +48,8 @@ fun main() {
             is EWallet -> {
                 println("=> Tipe: E-Wallet")
                 payment.topUp(50000.0)
+                println("=> Mencoba kembali pembayaran setelah Top Up:")
+                payment.processPayment(75000.0)
             }
             is CreditCard -> {
                 println("=> Tipe: Credit Card")
