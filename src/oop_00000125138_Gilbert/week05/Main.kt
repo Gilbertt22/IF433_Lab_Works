@@ -22,4 +22,14 @@ fun main() {
         }
         println("----------------------------")
     }
+    val math = MathHelper()
+
+    val hasilPersegi = math.hitungLuas(5)
+    println("Hasil hitungLuas(5)          [Int]    : $hasilPersegi")
+
+    val hasilPersegiPanjang = math.hitungLuas(10, 5)
+    println("Hasil hitungLuas(10, 5)      [Int,Int]: $hasilPersegiPanjang")
+
+    val hasilLingkaran = math.hitungLuas(7.0)
+    println("Hasil hitungLuas(7.0)        [Double] : $hasilLingkaran")
 }
