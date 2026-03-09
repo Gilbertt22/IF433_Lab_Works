@@ -6,7 +6,6 @@ class SmartCCTV(
 ) : SmartDevice, Recordable {
 
     override fun startRecord() {
-        println("Kamera Keamanan $name (ID: $id) mulai merekam...")
+        println("Kamera $name (ID: $id) mulai merekam kejadian...")
     }
-
 }

@@ -8,6 +8,7 @@ class SmartHomeHub {
     }
 
     fun turnOffAllSwitches() {
+        println("\n--- Mematikan Seluruh Saklar ---")
         for (device in devices) {
             if (device is Switchable) {
                 device.turnOff()
