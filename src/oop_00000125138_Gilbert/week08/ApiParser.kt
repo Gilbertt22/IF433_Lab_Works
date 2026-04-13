@@ -24,8 +24,17 @@ class ApiParser {
             is Electronic -> product.id
             is Clothing -> product.id
         }
-        val transactionId = JavaPaymentService.processPayment(id)!!
 
+        val transactionId = JavaPaymentService.processPayment(id)!!
+        when (product) {
+            is Electronic -> {
+                println("Processing Electronic: ${product.name} (Warranty ${product.warrantyMonths})")
+            }
+            is Clothing -> {
+                println("Processing Clothing: ${product.name} (Size ${product.size})")
+            }
+        }
         println("Transaction ID: $transactionId")
     }
+
 }
