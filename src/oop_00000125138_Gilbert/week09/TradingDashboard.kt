@@ -26,4 +26,5 @@ fun main() {
     topPerformersString.forEach { println(it) }
     worstPerformersString.forEach { println(it) }
     println("\nUnique Pairs Traded: $uniquePairs")
+    //sudah sesuai hasil dengan codingan
 }
