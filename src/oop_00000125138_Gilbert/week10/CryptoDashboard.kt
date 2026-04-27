@@ -14,4 +14,5 @@ fun main() {
     txRepo.add(Transaction("TX001", 500.0))
     txRepo.add(Transaction("TX002", 1200.5))
     txRepo.add(Transaction("TX003", 75.25))
+    //Output sudah sesuai
 }
