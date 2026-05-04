@@ -30,4 +30,7 @@ fun main() {
         val diagnosticInfo = it.diagnose()
         println(diagnosticInfo)
     }
+    with(homeDevices) {
+        println("Total Perangkat Terdaftar: ${this.size}")
+    }
 }
