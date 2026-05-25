@@ -20,6 +20,18 @@ class BadOrderProcessor {
     }
 }
 
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
+
+class RegularPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price
+}
+
+class VipPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price * 0.90
+}
+
 interface OrderRepository {
     fun saveOrder(itemName: String, finalPrice: Double, customerType: String)
 }
@@ -48,20 +60,16 @@ class SafeOrderProcessor(
     private val repo: OrderRepository,
     private val notifier: NotificationService
 ) {
-    fun processOrder(itemName: String, basePrice: Double, customerType: String) {
-        val finalPrice = when (customerType) {
-            "REGULAR" -> basePrice
-            "VIP" -> basePrice * 0.90
-            else -> basePrice
-        }
+    fun processOrder(itemName: String, basePrice: Double, pricingStrategy: PricingStrategy) {
+        val finalPrice = pricingStrategy.calculate(basePrice)
 
         println("Memproses pesanan $itemName seharga $finalPrice")
 
-        repo.saveOrder(itemName, finalPrice, customerType)
+        val strategyName = pricingStrategy.javaClass.simpleName
+            .replace("Pricing", "")
+            .uppercase()
+
+        repo.saveOrder(itemName, finalPrice, strategyName)
         notifier.sendNotification(itemName)
     }
 }
-
-
-
-
